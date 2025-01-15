@@ -8,6 +8,7 @@ import (
 	v1 "github.com/andmetoo/ozon-api-client/ozon/product/v1"
 	v2 "github.com/andmetoo/ozon-api-client/ozon/product/v2"
 	v4 "github.com/andmetoo/ozon-api-client/ozon/product/v4"
+	v5 "github.com/andmetoo/ozon-api-client/ozon/product/v5"
 )
 
 func New(
@@ -19,6 +20,7 @@ func New(
 		v2: v2.New(h, uri+"/v2/product"),
 		v3: v3.New(h, uri+"/v3/product"),
 		v4: v4.New(h, uri+"/v4/product"),
+		v5: v5.New(h, uri+"/v5/product"),
 	}
 }
 
@@ -27,6 +29,7 @@ type Product struct {
 	v2 *v2.Product
 	v3 *v3.Product
 	v4 *v4.Product
+	v5 *v5.Product
 }
 
 func (c *Product) V1() *v1.Product {
@@ -43,4 +46,8 @@ func (c *Product) V3() *v3.Product {
 
 func (c *Product) V4() *v4.Product {
 	return c.v4
+}
+
+func (c *Product) V5() *v5.Product {
+	return c.v5
 }
