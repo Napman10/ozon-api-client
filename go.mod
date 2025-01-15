@@ -2,8 +2,6 @@ module github.com/andmetoo/ozon-api-client
 
 go 1.22
 
-toolchain go1.23.2
-
 require (
 	github.com/abice/go-enum v0.6.0
 	github.com/pkg/errors v0.9.1
