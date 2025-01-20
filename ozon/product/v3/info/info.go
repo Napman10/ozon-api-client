@@ -38,3 +38,17 @@ func (c Info) Stocks(ctx context.Context, req *StocksRequest) (*StocksResponse, 
 
 	return request.Send[StocksResponse](c.h, r, request.ContentTypeApplicationJson)
 }
+
+func (c Info) List(ctx context.Context, req *ListRequest) (*ListResponse, *http.Response, error) {
+	b, err := json.Marshal(req)
+	if err != nil {
+		return nil, nil, errors.Wrap(err, "ListRequest.Marshal")
+	}
+
+	r, err := http.NewRequestWithContext(ctx, http.MethodPost, c.uri+"/list", bytes.NewReader(b))
+	if err != nil {
+		return nil, nil, errors.Wrap(err, "ListRequest.NewRequest")
+	}
+
+	return request.Send[ListResponse](c.h, r, request.ContentTypeApplicationJson)
+}

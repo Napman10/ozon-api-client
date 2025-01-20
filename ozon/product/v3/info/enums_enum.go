@@ -12,6 +12,257 @@ import (
 )
 
 const (
+	// ListResponseItemErrorLevelERRORLEVELUNSPECIFIED is a ListResponseItemErrorLevel of type ERROR_LEVEL_UNSPECIFIED.
+	ListResponseItemErrorLevelERRORLEVELUNSPECIFIED ListResponseItemErrorLevel = iota
+	// ListResponseItemErrorLevelERRORLEVELERROR is a ListResponseItemErrorLevel of type ERROR_LEVEL_ERROR.
+	ListResponseItemErrorLevelERRORLEVELERROR
+	// ListResponseItemErrorLevelERRORLEVELWARNING is a ListResponseItemErrorLevel of type ERROR_LEVEL_WARNING.
+	ListResponseItemErrorLevelERRORLEVELWARNING
+	// ListResponseItemErrorLevelERRORLEVELINTERNAL is a ListResponseItemErrorLevel of type ERROR_LEVEL_INTERNAL.
+	ListResponseItemErrorLevelERRORLEVELINTERNAL
+)
+
+var ErrInvalidListResponseItemErrorLevel = fmt.Errorf("not a valid ListResponseItemErrorLevel, try [%s]", strings.Join(_ListResponseItemErrorLevelNames, ", "))
+
+const _ListResponseItemErrorLevelName = "ERROR_LEVEL_UNSPECIFIEDERROR_LEVEL_ERRORERROR_LEVEL_WARNINGERROR_LEVEL_INTERNAL"
+
+var _ListResponseItemErrorLevelNames = []string{
+	_ListResponseItemErrorLevelName[0:23],
+	_ListResponseItemErrorLevelName[23:40],
+	_ListResponseItemErrorLevelName[40:59],
+	_ListResponseItemErrorLevelName[59:79],
+}
+
+// ListResponseItemErrorLevelNames returns a list of possible string values of ListResponseItemErrorLevel.
+func ListResponseItemErrorLevelNames() []string {
+	tmp := make([]string, len(_ListResponseItemErrorLevelNames))
+	copy(tmp, _ListResponseItemErrorLevelNames)
+	return tmp
+}
+
+var _ListResponseItemErrorLevelMap = map[ListResponseItemErrorLevel]string{
+	ListResponseItemErrorLevelERRORLEVELUNSPECIFIED: _ListResponseItemErrorLevelName[0:23],
+	ListResponseItemErrorLevelERRORLEVELERROR:       _ListResponseItemErrorLevelName[23:40],
+	ListResponseItemErrorLevelERRORLEVELWARNING:     _ListResponseItemErrorLevelName[40:59],
+	ListResponseItemErrorLevelERRORLEVELINTERNAL:    _ListResponseItemErrorLevelName[59:79],
+}
+
+// String implements the Stringer interface.
+func (x ListResponseItemErrorLevel) String() string {
+	if str, ok := _ListResponseItemErrorLevelMap[x]; ok {
+		return str
+	}
+	return fmt.Sprintf("ListResponseItemErrorLevel(%d)", x)
+}
+
+// IsValid provides a quick way to determine if the typed value is
+// part of the allowed enumerated values
+func (x ListResponseItemErrorLevel) IsValid() bool {
+	_, ok := _ListResponseItemErrorLevelMap[x]
+	return ok
+}
+
+var _ListResponseItemErrorLevelValue = map[string]ListResponseItemErrorLevel{
+	_ListResponseItemErrorLevelName[0:23]:  ListResponseItemErrorLevelERRORLEVELUNSPECIFIED,
+	_ListResponseItemErrorLevelName[23:40]: ListResponseItemErrorLevelERRORLEVELERROR,
+	_ListResponseItemErrorLevelName[40:59]: ListResponseItemErrorLevelERRORLEVELWARNING,
+	_ListResponseItemErrorLevelName[59:79]: ListResponseItemErrorLevelERRORLEVELINTERNAL,
+}
+
+// ParseListResponseItemErrorLevel attempts to convert a string to a ListResponseItemErrorLevel.
+func ParseListResponseItemErrorLevel(name string) (ListResponseItemErrorLevel, error) {
+	if x, ok := _ListResponseItemErrorLevelValue[name]; ok {
+		return x, nil
+	}
+	return ListResponseItemErrorLevel(0), fmt.Errorf("%s is %w", name, ErrInvalidListResponseItemErrorLevel)
+}
+
+// MarshalText implements the text marshaller method.
+func (x ListResponseItemErrorLevel) MarshalText() ([]byte, error) {
+	return []byte(x.String()), nil
+}
+
+// UnmarshalText implements the text unmarshaller method.
+func (x *ListResponseItemErrorLevel) UnmarshalText(text []byte) error {
+	name := string(text)
+	tmp, err := ParseListResponseItemErrorLevel(name)
+	if err != nil {
+		return err
+	}
+	*x = tmp
+	return nil
+}
+
+const (
+	// ListResponseItemPriceIndexesColorIndexCOLORINDEXUNSPECIFIED is a ListResponseItemPriceIndexesColorIndex of type COLOR_INDEX_UNSPECIFIED.
+	ListResponseItemPriceIndexesColorIndexCOLORINDEXUNSPECIFIED ListResponseItemPriceIndexesColorIndex = iota
+	// ListResponseItemPriceIndexesColorIndexCOLORINDEXWITHOUTINDEX is a ListResponseItemPriceIndexesColorIndex of type COLOR_INDEX_WITHOUT_INDEX.
+	ListResponseItemPriceIndexesColorIndexCOLORINDEXWITHOUTINDEX
+	// ListResponseItemPriceIndexesColorIndexCOLORINDEXGREEN is a ListResponseItemPriceIndexesColorIndex of type COLOR_INDEX_GREEN.
+	ListResponseItemPriceIndexesColorIndexCOLORINDEXGREEN
+	// ListResponseItemPriceIndexesColorIndexCOLORINDEXYELLOW is a ListResponseItemPriceIndexesColorIndex of type COLOR_INDEX_YELLOW.
+	ListResponseItemPriceIndexesColorIndexCOLORINDEXYELLOW
+	// ListResponseItemPriceIndexesColorIndexCOLORINDEXRED is a ListResponseItemPriceIndexesColorIndex of type COLOR_INDEX_RED.
+	ListResponseItemPriceIndexesColorIndexCOLORINDEXRED
+)
+
+var ErrInvalidListResponseItemPriceIndexesColorIndex = fmt.Errorf("not a valid ListResponseItemPriceIndexesColorIndex, try [%s]", strings.Join(_ListResponseItemPriceIndexesColorIndexNames, ", "))
+
+const _ListResponseItemPriceIndexesColorIndexName = "COLOR_INDEX_UNSPECIFIEDCOLOR_INDEX_WITHOUT_INDEXCOLOR_INDEX_GREENCOLOR_INDEX_YELLOWCOLOR_INDEX_RED"
+
+var _ListResponseItemPriceIndexesColorIndexNames = []string{
+	_ListResponseItemPriceIndexesColorIndexName[0:23],
+	_ListResponseItemPriceIndexesColorIndexName[23:48],
+	_ListResponseItemPriceIndexesColorIndexName[48:65],
+	_ListResponseItemPriceIndexesColorIndexName[65:83],
+	_ListResponseItemPriceIndexesColorIndexName[83:98],
+}
+
+// ListResponseItemPriceIndexesColorIndexNames returns a list of possible string values of ListResponseItemPriceIndexesColorIndex.
+func ListResponseItemPriceIndexesColorIndexNames() []string {
+	tmp := make([]string, len(_ListResponseItemPriceIndexesColorIndexNames))
+	copy(tmp, _ListResponseItemPriceIndexesColorIndexNames)
+	return tmp
+}
+
+var _ListResponseItemPriceIndexesColorIndexMap = map[ListResponseItemPriceIndexesColorIndex]string{
+	ListResponseItemPriceIndexesColorIndexCOLORINDEXUNSPECIFIED:  _ListResponseItemPriceIndexesColorIndexName[0:23],
+	ListResponseItemPriceIndexesColorIndexCOLORINDEXWITHOUTINDEX: _ListResponseItemPriceIndexesColorIndexName[23:48],
+	ListResponseItemPriceIndexesColorIndexCOLORINDEXGREEN:        _ListResponseItemPriceIndexesColorIndexName[48:65],
+	ListResponseItemPriceIndexesColorIndexCOLORINDEXYELLOW:       _ListResponseItemPriceIndexesColorIndexName[65:83],
+	ListResponseItemPriceIndexesColorIndexCOLORINDEXRED:          _ListResponseItemPriceIndexesColorIndexName[83:98],
+}
+
+// String implements the Stringer interface.
+func (x ListResponseItemPriceIndexesColorIndex) String() string {
+	if str, ok := _ListResponseItemPriceIndexesColorIndexMap[x]; ok {
+		return str
+	}
+	return fmt.Sprintf("ListResponseItemPriceIndexesColorIndex(%d)", x)
+}
+
+// IsValid provides a quick way to determine if the typed value is
+// part of the allowed enumerated values
+func (x ListResponseItemPriceIndexesColorIndex) IsValid() bool {
+	_, ok := _ListResponseItemPriceIndexesColorIndexMap[x]
+	return ok
+}
+
+var _ListResponseItemPriceIndexesColorIndexValue = map[string]ListResponseItemPriceIndexesColorIndex{
+	_ListResponseItemPriceIndexesColorIndexName[0:23]:  ListResponseItemPriceIndexesColorIndexCOLORINDEXUNSPECIFIED,
+	_ListResponseItemPriceIndexesColorIndexName[23:48]: ListResponseItemPriceIndexesColorIndexCOLORINDEXWITHOUTINDEX,
+	_ListResponseItemPriceIndexesColorIndexName[48:65]: ListResponseItemPriceIndexesColorIndexCOLORINDEXGREEN,
+	_ListResponseItemPriceIndexesColorIndexName[65:83]: ListResponseItemPriceIndexesColorIndexCOLORINDEXYELLOW,
+	_ListResponseItemPriceIndexesColorIndexName[83:98]: ListResponseItemPriceIndexesColorIndexCOLORINDEXRED,
+}
+
+// ParseListResponseItemPriceIndexesColorIndex attempts to convert a string to a ListResponseItemPriceIndexesColorIndex.
+func ParseListResponseItemPriceIndexesColorIndex(name string) (ListResponseItemPriceIndexesColorIndex, error) {
+	if x, ok := _ListResponseItemPriceIndexesColorIndexValue[name]; ok {
+		return x, nil
+	}
+	return ListResponseItemPriceIndexesColorIndex(0), fmt.Errorf("%s is %w", name, ErrInvalidListResponseItemPriceIndexesColorIndex)
+}
+
+// MarshalText implements the text marshaller method.
+func (x ListResponseItemPriceIndexesColorIndex) MarshalText() ([]byte, error) {
+	return []byte(x.String()), nil
+}
+
+// UnmarshalText implements the text unmarshaller method.
+func (x *ListResponseItemPriceIndexesColorIndex) UnmarshalText(text []byte) error {
+	name := string(text)
+	tmp, err := ParseListResponseItemPriceIndexesColorIndex(name)
+	if err != nil {
+		return err
+	}
+	*x = tmp
+	return nil
+}
+
+const (
+	// ListResponseItemSourceShipmentTypeSHIPMENTTYPEUNSPECIFIED is a ListResponseItemSourceShipmentType of type SHIPMENT_TYPE_UNSPECIFIED.
+	ListResponseItemSourceShipmentTypeSHIPMENTTYPEUNSPECIFIED ListResponseItemSourceShipmentType = iota
+	// ListResponseItemSourceShipmentTypeSHIPMENTTYPEGENERAL is a ListResponseItemSourceShipmentType of type SHIPMENT_TYPE_GENERAL.
+	ListResponseItemSourceShipmentTypeSHIPMENTTYPEGENERAL
+	// ListResponseItemSourceShipmentTypeSHIPMENTTYPEBOX is a ListResponseItemSourceShipmentType of type SHIPMENT_TYPE_BOX.
+	ListResponseItemSourceShipmentTypeSHIPMENTTYPEBOX
+	// ListResponseItemSourceShipmentTypeSHIPMENTTYPEPALLET is a ListResponseItemSourceShipmentType of type SHIPMENT_TYPE_PALLET.
+	ListResponseItemSourceShipmentTypeSHIPMENTTYPEPALLET
+)
+
+var ErrInvalidListResponseItemSourceShipmentType = fmt.Errorf("not a valid ListResponseItemSourceShipmentType, try [%s]", strings.Join(_ListResponseItemSourceShipmentTypeNames, ", "))
+
+const _ListResponseItemSourceShipmentTypeName = "SHIPMENT_TYPE_UNSPECIFIEDSHIPMENT_TYPE_GENERALSHIPMENT_TYPE_BOXSHIPMENT_TYPE_PALLET"
+
+var _ListResponseItemSourceShipmentTypeNames = []string{
+	_ListResponseItemSourceShipmentTypeName[0:25],
+	_ListResponseItemSourceShipmentTypeName[25:46],
+	_ListResponseItemSourceShipmentTypeName[46:63],
+	_ListResponseItemSourceShipmentTypeName[63:83],
+}
+
+// ListResponseItemSourceShipmentTypeNames returns a list of possible string values of ListResponseItemSourceShipmentType.
+func ListResponseItemSourceShipmentTypeNames() []string {
+	tmp := make([]string, len(_ListResponseItemSourceShipmentTypeNames))
+	copy(tmp, _ListResponseItemSourceShipmentTypeNames)
+	return tmp
+}
+
+var _ListResponseItemSourceShipmentTypeMap = map[ListResponseItemSourceShipmentType]string{
+	ListResponseItemSourceShipmentTypeSHIPMENTTYPEUNSPECIFIED: _ListResponseItemSourceShipmentTypeName[0:25],
+	ListResponseItemSourceShipmentTypeSHIPMENTTYPEGENERAL:     _ListResponseItemSourceShipmentTypeName[25:46],
+	ListResponseItemSourceShipmentTypeSHIPMENTTYPEBOX:         _ListResponseItemSourceShipmentTypeName[46:63],
+	ListResponseItemSourceShipmentTypeSHIPMENTTYPEPALLET:      _ListResponseItemSourceShipmentTypeName[63:83],
+}
+
+// String implements the Stringer interface.
+func (x ListResponseItemSourceShipmentType) String() string {
+	if str, ok := _ListResponseItemSourceShipmentTypeMap[x]; ok {
+		return str
+	}
+	return fmt.Sprintf("ListResponseItemSourceShipmentType(%d)", x)
+}
+
+// IsValid provides a quick way to determine if the typed value is
+// part of the allowed enumerated values
+func (x ListResponseItemSourceShipmentType) IsValid() bool {
+	_, ok := _ListResponseItemSourceShipmentTypeMap[x]
+	return ok
+}
+
+var _ListResponseItemSourceShipmentTypeValue = map[string]ListResponseItemSourceShipmentType{
+	_ListResponseItemSourceShipmentTypeName[0:25]:  ListResponseItemSourceShipmentTypeSHIPMENTTYPEUNSPECIFIED,
+	_ListResponseItemSourceShipmentTypeName[25:46]: ListResponseItemSourceShipmentTypeSHIPMENTTYPEGENERAL,
+	_ListResponseItemSourceShipmentTypeName[46:63]: ListResponseItemSourceShipmentTypeSHIPMENTTYPEBOX,
+	_ListResponseItemSourceShipmentTypeName[63:83]: ListResponseItemSourceShipmentTypeSHIPMENTTYPEPALLET,
+}
+
+// ParseListResponseItemSourceShipmentType attempts to convert a string to a ListResponseItemSourceShipmentType.
+func ParseListResponseItemSourceShipmentType(name string) (ListResponseItemSourceShipmentType, error) {
+	if x, ok := _ListResponseItemSourceShipmentTypeValue[name]; ok {
+		return x, nil
+	}
+	return ListResponseItemSourceShipmentType(0), fmt.Errorf("%s is %w", name, ErrInvalidListResponseItemSourceShipmentType)
+}
+
+// MarshalText implements the text marshaller method.
+func (x ListResponseItemSourceShipmentType) MarshalText() ([]byte, error) {
+	return []byte(x.String()), nil
+}
+
+// UnmarshalText implements the text unmarshaller method.
+func (x *ListResponseItemSourceShipmentType) UnmarshalText(text []byte) error {
+	name := string(text)
+	tmp, err := ParseListResponseItemSourceShipmentType(name)
+	if err != nil {
+		return err
+	}
+	*x = tmp
+	return nil
+}
+
+const (
 	// StocksRequestFilterVisibilityALL is a StocksRequestFilterVisibility of type ALL.
 	StocksRequestFilterVisibilityALL StocksRequestFilterVisibility = iota
 	// StocksRequestFilterVisibilityVISIBLE is a StocksRequestFilterVisibility of type VISIBLE.
