@@ -6,6 +6,7 @@ import (
 	"io"
 	"net/http"
 	"testing"
+	"time"
 
 	"github.com/andmetoo/ozon-api-client/ozon/product/v3/info"
 
@@ -287,7 +288,7 @@ func TestList_Success(t *testing.T) {
 						Value:          0,
 					},
 				},
-				CreatedAt:             "2019-08-24T14:15:22Z",
+				CreatedAt:             time.Date(2019, 8, 24, 14, 15, 22, 0, time.UTC),
 				CurrencyCode:          "string",
 				DescriptionCategoryID: 0,
 				DiscountedFBOStocks:   0,
@@ -360,7 +361,7 @@ func TestList_Success(t *testing.T) {
 				},
 				Sources: []info.ListResponseItemSource{
 					{
-						CreatedAt:    "2019-08-24T14:15:22Z",
+						CreatedAt:    time.Date(2019, 8, 24, 14, 15, 22, 0, time.UTC),
 						QuantCode:    "string",
 						ShipmentType: info.ListResponseItemSourceShipmentTypeSHIPMENTTYPEUNSPECIFIED,
 						SKU:          0,
@@ -375,7 +376,7 @@ func TestList_Success(t *testing.T) {
 					StatusFailed:      "string",
 					StatusName:        "string",
 					StatusTooltip:     "string",
-					StatusUpdatedAt:   "2019-08-24T14:15:22Z",
+					StatusUpdatedAt:   time.Date(2019, 8, 24, 14, 15, 22, 0, time.UTC),
 					ValidationStatus:  "string",
 				},
 				Stocks: info.ListResponseItemStocks{
@@ -390,7 +391,7 @@ func TestList_Success(t *testing.T) {
 					},
 				},
 				TypeID:    0,
-				UpdatedAt: "2019-08-24T14:15:22Z",
+				UpdatedAt: time.Date(2019, 8, 24, 14, 15, 22, 0, time.UTC),
 				Vat:       "string",
 				VisibilityDetails: info.ListResponseItemVisibilityDetails{
 					HasPrice: true,

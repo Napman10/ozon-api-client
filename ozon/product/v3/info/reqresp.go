@@ -1,5 +1,7 @@
 package info
 
+import "time"
+
 type StocksRequestFilter struct {
 	OfferID    []string                      `json:"offer_id"`
 	ProductID  []string                      `json:"product_id"`
@@ -102,7 +104,7 @@ type ListResponseItemPriceIndexes struct {
 }
 
 type ListResponseItemSource struct {
-	CreatedAt    string                             `json:"created_at"`
+	CreatedAt    time.Time                          `json:"created_at"`
 	QuantCode    string                             `json:"quant_code"`
 	ShipmentType ListResponseItemSourceShipmentType `json:"shipment_type"`
 	SKU          int64                              `json:"sku"`
@@ -110,15 +112,15 @@ type ListResponseItemSource struct {
 }
 
 type ListResponseItemStatuses struct {
-	IsCreated         bool   `json:"is_created"`
-	ModerateStatus    string `json:"moderate_status"`
-	Status            string `json:"status"`
-	StatusDescription string `json:"status_description"`
-	StatusFailed      string `json:"status_failed"`
-	StatusName        string `json:"status_name"`
-	StatusTooltip     string `json:"status_tooltip"`
-	StatusUpdatedAt   string `json:"status_updated_at"`
-	ValidationStatus  string `json:"validation_status"`
+	IsCreated         bool      `json:"is_created"`
+	ModerateStatus    string    `json:"moderate_status"`
+	Status            string    `json:"status"`
+	StatusDescription string    `json:"status_description"`
+	StatusFailed      string    `json:"status_failed"`
+	StatusName        string    `json:"status_name"`
+	StatusTooltip     string    `json:"status_tooltip"`
+	StatusUpdatedAt   time.Time `json:"status_updated_at"`
+	ValidationStatus  string    `json:"validation_status"`
 }
 
 type ListResponseItemStocksStock struct {
@@ -142,7 +144,7 @@ type ListResponseItem struct {
 	Barcodes              []string                          `json:"barcodes"`
 	ColorImage            []string                          `json:"color_image"`
 	Commissions           []ListResponseItemCommission      `json:"commissions"`
-	CreatedAt             string                            `json:"created_at"`
+	CreatedAt             time.Time                         `json:"created_at"`
 	CurrencyCode          string                            `json:"currency_code"`
 	DescriptionCategoryID int64                             `json:"description_category_id"`
 	DiscountedFBOStocks   int32                             `json:"discounted_fbo_stocks"`
@@ -170,7 +172,7 @@ type ListResponseItem struct {
 	Statuses              ListResponseItemStatuses          `json:"statuses"`
 	Stocks                ListResponseItemStocks            `json:"stocks"`
 	TypeID                int64                             `json:"type_id"`
-	UpdatedAt             string                            `json:"updated_at"`
+	UpdatedAt             time.Time                         `json:"updated_at"`
 	Vat                   string                            `json:"vat"`
 	VisibilityDetails     ListResponseItemVisibilityDetails `json:"visibility_details"`
 	VolumeWeight          float64                           `json:"volume_weight"`
