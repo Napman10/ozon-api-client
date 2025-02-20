@@ -21,7 +21,7 @@ func TestValues_Success(t *testing.T) {
 					require.Equal(t, "https://api-seller.ozon.ru/v1/description-category/attribute/values", test.FullURL(r))
 					require.Equal(t, test.ApiKey, r.Header.Get(auth.APIKeyHeader))
 					require.Equal(t, test.ClientID, r.Header.Get(auth.ClientIDHeader))
-					require.Equal(t, `{"attribute_id":0,"category_id":0,"language":"DEFAULT","last_value_id":0,"limit":0,"type_id":0}`, test.Body(t, r))
+					require.Equal(t, `{"attribute_id":0,"description_category_id":0,"language":"DEFAULT","last_value_id":0,"limit":0,"type_id":0}`, test.Body(t, r))
 
 					return &http.Response{
 						StatusCode: http.StatusOK,
