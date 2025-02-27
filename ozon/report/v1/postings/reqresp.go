@@ -6,9 +6,9 @@ type CreateRequestFilter struct {
 	ProcessedAtFrom time.Time `json:"processed_at_from"`
 	ProcessedAtTo   time.Time `json:"processed_at_to"`
 	DeliverySchema  []string  `json:"delivery_schema"`
-	Sku             []int64   `json:"sku"`
-	CancelReasonId  []int64   `json:"cancel_reason_id"`
-	OfferId         string    `json:"offer_id"`
+	SKU             []int64   `json:"sku"`
+	CancelReasonID  []int64   `json:"cancel_reason_id"`
+	OfferID         string    `json:"offer_id"`
 	StatusAlias     []string  `json:"status_alias"`
 	Statuses        []int64   `json:"statuses"`
 	Title           string    `json:"title"`

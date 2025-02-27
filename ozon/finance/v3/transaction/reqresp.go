@@ -24,7 +24,7 @@ type ListResponseResultOperationPosting struct {
 	DeliverySchema string `json:"delivery_schema"`
 	OrderDate      string `json:"order_date"`
 	PostingNumber  string `json:"posting_number"`
-	WarehouseID    int    `json:"warehouse_id"`
+	WarehouseID    int64  `json:"warehouse_id"`
 }
 
 type ListResponseResultOperationItem struct {
@@ -37,10 +37,10 @@ type ListResponseResultOperation struct {
 	OperationType        string                             `json:"operation_type"`
 	OperationDate        string                             `json:"operation_date"`
 	OperationTypeName    string                             `json:"operation_type_name"`
-	DeliveryCharge       int                                `json:"delivery_charge"`
-	ReturnDeliveryCharge int                                `json:"return_delivery_charge"`
-	AccrualsForSale      int                                `json:"accruals_for_sale"`
-	SaleCommission       int                                `json:"sale_commission"`
+	DeliveryCharge       int64                              `json:"delivery_charge"`
+	ReturnDeliveryCharge int64                              `json:"return_delivery_charge"`
+	AccrualsForSale      int64                              `json:"accruals_for_sale"`
+	SaleCommission       int64                              `json:"sale_commission"`
 	Amount               float64                            `json:"amount"`
 	Type                 string                             `json:"type"`
 	Posting              ListResponseResultOperationPosting `json:"posting"`
@@ -49,8 +49,8 @@ type ListResponseResultOperation struct {
 
 type ListResponseResult struct {
 	Operations []ListResponseResultOperation `json:"operations"`
-	PageCount  int                           `json:"page_count"`
-	RowCount   int                           `json:"row_count"`
+	PageCount  int64                         `json:"page_count"`
+	RowCount   int64                         `json:"row_count"`
 }
 
 type ListResponse struct {
