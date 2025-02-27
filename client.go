@@ -1,6 +1,8 @@
 package core
 
 import (
+	"github.com/andmetoo/ozon-api-client/ozon/finance"
+	"github.com/andmetoo/ozon-api-client/ozon/report"
 	"net/http"
 	"strings"
 	"time"
@@ -126,6 +128,8 @@ type Client struct {
 	rating              *rating.Rating
 	warehouse           *warehouse.Warehouse
 	descriptionCategory *descriptioncategory.DescriptionCategory
+	report              *report.Report
+	finance             *finance.Finance
 }
 
 func (c Client) Category() *category.Category {
@@ -151,3 +155,7 @@ func (c Client) Warehouse() *warehouse.Warehouse {
 func (c Client) DescriptionCategory() *descriptioncategory.DescriptionCategory {
 	return c.descriptionCategory
 }
+
+func (c Client) Report() *report.Report { return c.report }
+
+func (c Client) Finance() *finance.Finance { return c.finance }
