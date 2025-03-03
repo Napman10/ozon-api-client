@@ -84,7 +84,7 @@ func TestWarehouseList_Success(t *testing.T) {
 					FirstMileType:       "DropOff",
 				},
 				WorkingDays: []int32{1, 2, 3, 4, 5},
-				Status:      "new",
+				Status:      v1.ListResponseResultStatusNew,
 			},
 			{
 				WarehouseID: 22142605386000,
