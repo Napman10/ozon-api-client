@@ -2,6 +2,7 @@ package core
 
 import (
 	"github.com/andmetoo/ozon-api-client/ozon/finance"
+	"github.com/andmetoo/ozon-api-client/ozon/posting"
 	"github.com/andmetoo/ozon-api-client/ozon/report"
 	"net/http"
 	"strings"
@@ -118,6 +119,8 @@ func NewClient(opts ...Opts) (*Client, error) {
 		rating:              rating.New(c.h, c.uri),
 		warehouse:           warehouse.New(c.h, c.uri),
 		descriptionCategory: descriptioncategory.New(c.h, c.uri),
+		finance:             finance.New(c.h, c.uri),
+		posting:             posting.New(c.h, c.uri),
 	}, nil
 }
 
@@ -130,6 +133,7 @@ type Client struct {
 	descriptionCategory *descriptioncategory.DescriptionCategory
 	report              *report.Report
 	finance             *finance.Finance
+	posting             *posting.Posting
 }
 
 func (c Client) Category() *category.Category {
@@ -159,3 +163,5 @@ func (c Client) DescriptionCategory() *descriptioncategory.DescriptionCategory {
 func (c Client) Report() *report.Report { return c.report }
 
 func (c Client) Finance() *finance.Finance { return c.finance }
+
+func (c Client) Posting() *posting.Posting { return c.posting }
