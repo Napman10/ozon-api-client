@@ -21,10 +21,10 @@ type ListRequest struct {
 }
 
 type ListResponseResultOperationPosting struct {
-	DeliverySchema ListResponseResultOperationPostingDeliverySchema `json:"delivery_schema"`
-	OrderDate      string                                           `json:"order_date"`
-	PostingNumber  string                                           `json:"posting_number"`
-	WarehouseID    int64                                            `json:"warehouse_id"`
+	DeliverySchema string `json:"delivery_schema"`
+	OrderDate      string `json:"order_date"`
+	PostingNumber  string `json:"posting_number"`
+	WarehouseID    int64  `json:"warehouse_id"`
 }
 
 type ListResponseResultOperationItem struct {
@@ -33,8 +33,8 @@ type ListResponseResultOperationItem struct {
 }
 
 type ListResponseResultOperationService struct {
-	Name  ListResponseResultOperationServiceName `json:"name"`
-	Price float64                                `json:"price"`
+	Name  string  `json:"name"`
+	Price float64 `json:"price"`
 }
 
 type ListResponseResultOperation struct {
@@ -50,7 +50,7 @@ type ListResponseResultOperation struct {
 	ReturnDeliveryCharge float64                              `json:"return_delivery_charge"`
 	SaleCommission       float64                              `json:"sale_commission"`
 	Services             []ListResponseResultOperationService `json:"services"`
-	Type                 ListResponseResultOperationType      `json:"type"`
+	Type                 string                               `json:"type"`
 }
 
 type ListResponseResult struct {

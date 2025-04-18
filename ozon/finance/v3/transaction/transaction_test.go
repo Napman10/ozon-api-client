@@ -91,9 +91,9 @@ func TestList_Success(t *testing.T) {
 					AccrualsForSale:      0,
 					SaleCommission:       0,
 					Amount:               -6.46,
-					Type:                 transaction.ListResponseResultOperationTypeServices,
+					Type:                 "services",
 					Posting: transaction.ListResponseResultOperationPosting{
-						DeliverySchema: transaction.ListResponseResultOperationPostingDeliverySchemaFBS,
+						DeliverySchema: "",
 						OrderDate:      "",
 						PostingNumber:  "",
 						WarehouseID:    0,
