@@ -21,10 +21,10 @@ type ListRequest struct {
 }
 
 type ListResponseResultOperationPosting struct {
-	DeliverySchema string `json:"delivery_schema"`
-	OrderDate      string `json:"order_date"`
-	PostingNumber  string `json:"posting_number"`
-	WarehouseID    int64  `json:"warehouse_id"`
+	DeliverySchema ListResponseResultOperationPostingDeliverySchema `json:"delivery_schema"`
+	OrderDate      string                                           `json:"order_date"`
+	PostingNumber  string                                           `json:"posting_number"`
+	WarehouseID    int64                                            `json:"warehouse_id"`
 }
 
 type ListResponseResultOperationItem struct {
@@ -32,19 +32,25 @@ type ListResponseResultOperationItem struct {
 	SKU  int64  `json:"sku"`
 }
 
+type ListResponseResultOperationService struct {
+	Name  ListResponseResultOperationServiceName `json:"name"`
+	Price float64                                `json:"price"`
+}
+
 type ListResponseResultOperation struct {
-	OperationID          int64                              `json:"operation_id"`
-	OperationType        string                             `json:"operation_type"`
-	OperationDate        string                             `json:"operation_date"`
-	OperationTypeName    string                             `json:"operation_type_name"`
-	DeliveryCharge       int64                              `json:"delivery_charge"`
-	ReturnDeliveryCharge int64                              `json:"return_delivery_charge"`
-	AccrualsForSale      int64                              `json:"accruals_for_sale"`
-	SaleCommission       int64                              `json:"sale_commission"`
-	Amount               float64                            `json:"amount"`
-	Type                 string                             `json:"type"`
-	Posting              ListResponseResultOperationPosting `json:"posting"`
-	Items                []ListResponseResultOperationItem  `json:"items"`
+	AccrualsForSale      float64                              `json:"accruals_for_sale"`
+	Amount               float64                              `json:"amount"`
+	DeliveryCharge       float64                              `json:"delivery_charge"`
+	Items                []ListResponseResultOperationItem    `json:"items"`
+	OperationDate        string                               `json:"operation_date"`
+	OperationID          int64                                `json:"operation_id"`
+	OperationType        string                               `json:"operation_type"`
+	OperationTypeName    string                               `json:"operation_type_name"`
+	Posting              ListResponseResultOperationPosting   `json:"posting"`
+	ReturnDeliveryCharge float64                              `json:"return_delivery_charge"`
+	SaleCommission       float64                              `json:"sale_commission"`
+	Services             []ListResponseResultOperationService `json:"services"`
+	Type                 ListResponseResultOperationType      `json:"type"`
 }
 
 type ListResponseResult struct {

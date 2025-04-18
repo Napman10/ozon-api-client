@@ -40,7 +40,7 @@ func TestList_Success(t *testing.T) {
 									"amount": -6.46,
 									"type": "services",
 									"posting": {
-									  "delivery_schema": "",
+									  "delivery_schema": "FBS",
 									  "order_date": "",
 									  "posting_number": "",
 									  "warehouse_id": 0
@@ -91,14 +91,15 @@ func TestList_Success(t *testing.T) {
 					AccrualsForSale:      0,
 					SaleCommission:       0,
 					Amount:               -6.46,
-					Type:                 "services",
+					Type:                 transaction.ListResponseResultOperationTypeServices,
 					Posting: transaction.ListResponseResultOperationPosting{
-						DeliverySchema: "",
+						DeliverySchema: transaction.ListResponseResultOperationPostingDeliverySchemaFBS,
 						OrderDate:      "",
 						PostingNumber:  "",
 						WarehouseID:    0,
 					},
-					Items: []transaction.ListResponseResultOperationItem{},
+					Items:    []transaction.ListResponseResultOperationItem{},
+					Services: []transaction.ListResponseResultOperationService{},
 				},
 			},
 			PageCount: 1,
