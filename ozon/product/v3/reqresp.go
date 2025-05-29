@@ -44,6 +44,7 @@ type ImportItem struct {
 	PremiumPrice          string                `json:"premium_price"`
 	Price                 string                `json:"price"`
 	PrimaryImage          string                `json:"primary_image"`
+	TypeID                int64                 `json:"type_id"`
 	Vat                   string                `json:"vat"`
 	Weight                int64                 `json:"weight"`
 	WeightUnit            string                `json:"weight_unit"`

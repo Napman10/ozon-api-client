@@ -21,7 +21,7 @@ func TestImport_Success(t *testing.T) {
 					require.Equal(t, "https://api-seller.ozon.ru/v3/product/import", test.FullURL(r))
 					require.Equal(t, test.ApiKey, r.Header.Get(auth.APIKeyHeader))
 					require.Equal(t, test.ClientID, r.Header.Get(auth.ClientIDHeader))
-					require.Equal(t, `{"items":[{"attributes":[{"complex_id":0,"id":5076,"values":[{"dictionary_value_id":971082156,"value":"Стойка для акустической системы"}]},{"complex_id":0,"id":10096,"values":[{"value":"серый"}]}],"barcode":"112772873170","description_category_id":17033876,"color_image":"","complex_attributes":[{"attributes":[{"complex_id":123,"id":83,"values":[{"value":"test"}]}]}],"currency_code":"RUB","depth":10,"dimension_unit":"nm","height":250,"images":[],"images360":[],"name":"Комплект защитных плёнок для X3 NFC. Темный хлопок","offer_id":"143210608","old_price":"1100","pdf_list":[],"premium_price":"900","price":"1000","primary_image":"","vat":"0.1","weight":100,"weight_unit":"g","width":150}]}`, test.Body(t, r))
+					require.Equal(t, `{"items":[{"attributes":[{"complex_id":0,"id":5076,"values":[{"dictionary_value_id":971082156,"value":"Стойка для акустической системы"}]},{"complex_id":0,"id":10096,"values":[{"value":"серый"}]}],"barcode":"112772873170","description_category_id":17033876,"color_image":"","complex_attributes":[{"attributes":[{"complex_id":123,"id":83,"values":[{"value":"test"}]}]}],"currency_code":"RUB","depth":10,"dimension_unit":"nm","height":250,"images":[],"images360":[],"name":"Комплект защитных плёнок для X3 NFC. Темный хлопок","offer_id":"143210608","old_price":"1100","pdf_list":[],"premium_price":"900","price":"1000","primary_image":"","type_id":91565,"vat":"0.1","weight":100,"weight_unit":"g","width":150}]}`, test.Body(t, r))
 
 					return &http.Response{
 						StatusCode: http.StatusOK,
@@ -91,6 +91,7 @@ func TestImport_Success(t *testing.T) {
 				PremiumPrice:  "900",
 				Price:         "1000",
 				PrimaryImage:  "",
+				TypeID:        91565,
 				Vat:           "0.1",
 				Weight:        100,
 				WeightUnit:    "g",
