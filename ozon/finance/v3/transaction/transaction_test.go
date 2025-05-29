@@ -93,7 +93,7 @@ func TestList_Success(t *testing.T) {
 					Amount:               -6.46,
 					Type:                 "services",
 					Posting: transaction.ListResponseResultOperationPosting{
-						DeliverySchema: "",
+						DeliverySchema: "FBS",
 						OrderDate:      "",
 						PostingNumber:  "",
 						WarehouseID:    0,
